@@ -132,7 +132,7 @@
     <ClCompile Include="..\..\src\third_party\LuaXML_lib.c">
       <Filter>Extension</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\third_party\lsqlite3.c">
+    <ClCompile Include="..\..\src\third_party\luapgsql.c">
       <Filter>Extension</Filter>
     </ClCompile>
   </ItemGroup>
@@ -220,6 +220,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\third_party\lua-5.3.5\src\lzio.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\third_party\luapgsql.h">
+      <Filter>Extension</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

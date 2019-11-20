@@ -2189,6 +2189,8 @@ civetweb_open_lua_libs(lua_State *L)
 #endif
 #if defined(USE_LUA_PGSQL)
 	{
+		extern int luaopen_pgsql(lua_State * L);
+		luaopen_pgsql(L);
 	}
 #endif
 }

@@ -656,23 +656,20 @@ luaopen_json(lua_State* L)
 	luaL_setfuncs(L, methods, 0);
 	lua_setglobal(L, "json");
 
-
-
-//
-//#if LUA_VERSION_NUM >= 502
-//	luaL_newlib(L, methods);
-//#else
-//	luaL_register(L, "json", methods);
-//#endif
+#if LUA_VERSION_NUM >= 502
+	luaL_newlib(L, methods);
+#else
+	luaL_register(L, "json", methods);
+#endif
 //	json_set_info(L);
 //	lua_newtable(L);
 //	/* The null metatable */
 //	if (luaL_newmetatable(L, JSON_NULL_METATABLE)) {
-//#if LUA_VERSION_NUM >= 502
-//		luaL_setfuncs(L, null_methods, 0);
-//#else
-//		luaL_register(L, NULL, null_methods);
-//#endif
+#if LUA_VERSION_NUM >= 502
+		luaL_setfuncs(L, null_methods, 0);
+#else
+		luaL_register(L, NULL, null_methods);
+#endif
 //		lua_pushliteral(L, "__metatable");
 //		lua_pushliteral(L, "must not access this metatable");
 //		lua_settable(L, -3);
