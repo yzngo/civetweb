@@ -2181,6 +2181,16 @@ civetweb_open_lua_libs(lua_State *L)
 		luaopen_lfs(L);
 	}
 #endif
+#if defined(USE_LUA_JSON)
+	{
+		extern int luaopen_json(lua_State * L);
+		luaopen_json(L);
+	}
+#endif
+#if defined(USE_LUA_PGSQL)
+	{
+	}
+#endif
 }
 
 

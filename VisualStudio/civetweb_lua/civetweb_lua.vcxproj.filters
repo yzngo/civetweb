@@ -21,13 +21,13 @@
     <ClInclude Include="..\..\include\civetweb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\third_party\lua-5.2.4\src\lua.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\third_party\lua-5.2.4\src\lauxlib.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\third_party\civetweb_lua.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\third_party\lua-5.3.5\src\lua.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\third_party\lua-5.3.5\src\lauxlib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
