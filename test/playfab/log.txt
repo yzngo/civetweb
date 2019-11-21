@@ -51,3 +51,18 @@
 127.0.0.1 - - [21/Nov/2019:09:58:17 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 587 - PostmanRuntime/7.20.1
 127.0.0.1 - - [21/Nov/2019:10:05:52 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 587 - PostmanRuntime/7.20.1
 127.0.0.1 - - [21/Nov/2019:10:09:07 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 587 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:14:13 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:14:23 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:14:35 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:14:44 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:14:59 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:15:04 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:15:16 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:15:25 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:15:30 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 265 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:16:57 +0800] "GET / HTTP/1.1" 200 11990 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36
+127.0.0.1 - - [21/Nov/2019:10:16:57 +0800] "GET /favicon.ico HTTP/1.1" 404 255 http://localhost:8000/ Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36
+127.0.0.1 - - [21/Nov/2019:10:16:57 +0800] "GET /require_test.lua HTTP/1.1" -1 1036 http://localhost:8000/ Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36
+127.0.0.1 - - [21/Nov/2019:10:17:04 +0800] "GET /require_test.lua HTTP/1.1" -1 1036 - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36
+127.0.0.1 - - [21/Nov/2019:10:17:27 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 992 - PostmanRuntime/7.20.1
+127.0.0.1 - - [21/Nov/2019:10:17:42 +0800] "POST /playfab/postdata.lua HTTP/1.1" -1 266 - PostmanRuntime/7.20.1

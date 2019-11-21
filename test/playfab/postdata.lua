@@ -1,6 +1,5 @@
 
 if mg.request_info.request_method == "POST" then
-
   local buf = mg.read();
   local data = json.decode(buf);
 
