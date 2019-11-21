@@ -102,7 +102,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>USE_SERVER_STATS;USE_DUKTAPE;USE_IPV6;LUA_COMPAT_ALL;USE_LUA;USE_LUA_FILE_SYSTEM;USE_WEBSOCKET;USE_LUA_JSON;USE_LUA_PGSQL;WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_SERVER_STATS;USE_DUKTAPE;USE_IPV6;LUA_COMPAT_ALL;USE_LUA;USE_LUA_FILE_SYSTEM;USE_WEBSOCKET;USE_LUA_JSON;USE_LUA_PGSQL;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\src\third_party;$(ProjectDir)..\..\src\third_party\lua-5.3.5\src;$(ProjectDir)..\..\src\third_party\duktape-1.5.2\src;$(ProjectDir)..\..\src\third_party\PostgreSQL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -118,7 +118,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>USE_SERVER_STATS;USE_DUKTAPE;USE_IPV6;LUA_COMPAT_ALL;USE_LUA;USE_LUA_FILE_SYSTEM;USE_WEBSOCKET;USE_LUA_JSON;USE_LUA_PGSQL;WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_SERVER_STATS;USE_DUKTAPE;USE_IPV6;LUA_COMPAT_ALL;USE_LUA;USE_LUA_FILE_SYSTEM;USE_WEBSOCKET;USE_LUA_JSON;USE_LUA_PGSQL;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\src\third_party;$(ProjectDir)..\..\src\third_party\lua-5.3.5\src;$(ProjectDir)..\..\src\third_party\duktape-1.5.2\src;$(ProjectDir)..\..\src\third_party\PostgreSQL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -150,7 +150,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>USE_SERVER_STATS;USE_DUKTAPE;USE_IPV6;LUA_COMPAT_ALL;USE_LUA;USE_LUA_FILE_SYSTEM;USE_WEBSOCKET;USE_LUA_JSON;USE_LUA_PGSQL;WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_SERVER_STATS;USE_DUKTAPE;USE_IPV6;LUA_COMPAT_ALL;USE_LUA;USE_LUA_FILE_SYSTEM;USE_WEBSOCKET;USE_LUA_JSON;USE_LUA_PGSQL;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\src\third_party;$(ProjectDir)..\..\src\third_party\lua-5.3.5\src;$(ProjectDir)..\..\src\third_party\duktape-1.5.2\src;$(ProjectDir)..\..\src\third_party\PostgreSQL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -170,7 +170,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>USE_SERVER_STATS;USE_DUKTAPE;USE_IPV6;LUA_COMPAT_ALL;USE_LUA;USE_LUA_FILE_SYSTEM;USE_WEBSOCKET;USE_LUA_JSON;USE_LUA_PGSQL;WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>USE_SERVER_STATS;USE_DUKTAPE;USE_IPV6;LUA_COMPAT_ALL;USE_LUA;USE_LUA_FILE_SYSTEM;USE_WEBSOCKET;USE_LUA_JSON;USE_LUA_PGSQL;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\src\third_party;$(ProjectDir)..\..\src\third_party\lua-5.3.5\src;$(ProjectDir)..\..\src\third_party\duktape-1.5.2\src;$(ProjectDir)..\..\src\third_party\PostgreSQL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

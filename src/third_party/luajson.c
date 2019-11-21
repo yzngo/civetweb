@@ -32,19 +32,19 @@
  * written by Nathaniel Musgrove (proton.zero@gmail.com), for the original
  * code see http://luaforge.net/projects/luajsonlib/
  */
-#include <lua.h>
 #include <lauxlib.h>
+#include <lua.h>
 #include <lualib.h>
 
+#include <ctype.h>
 #include <setjmp.h>
 #include <stdarg.h>
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define JSON_NULL_METATABLE 	"JSON null object methods"
-#define JSON_GCMEM_METATABLE	"JSON garbage collected memory"
+#define JSON_NULL_METATABLE "JSON null object methods"
+#define JSON_GCMEM_METATABLE "JSON garbage collected memory"
 
 #define vasprintf vsprintf
 
@@ -359,10 +359,10 @@ decode_value(lua_State *L, char **s, int null)
 		int isfloat = 0;
 
 		/* advance pointer past the number */
-		while (isdigit(**s) || **s == '+' || **s == '-'
-		    || **s == 'e' || **s == 'E' || **s == '.') {
-		    	if (**s == 'e' || **s == 'E' || **s == '.')
-		    		isfloat = 1;
+		while (isdigit(**s) || **s == '+' || **s == '-' || **s == 'e'
+		       || **s == 'E' || **s == '.') {
+			if (**s == 'e' || **s == 'E' || **s == '.')
+				isfloat = 1;
 			(*s)++;
 		}
 		if (isfloat)
@@ -380,7 +380,7 @@ decode_value(lua_State *L, char **s, int null)
 		case '"':
 			decode_string(L, s);
 			break;
-		case ']':	/* ignore end of empty array */
+		case ']': /* ignore end of empty array */
 			lua_pushnil(L);
 			break;
 		default:
@@ -395,12 +395,7 @@ json_decode(lua_State *L)
 {
 	char *s;
 	int null;
-	const char *const options[] = {
-		"empty-string",
-		"json-null",
-		"nil",
-		NULL
-	};
+	const char *const options[] = {"empty-string", "json-null", "nil", NULL};
 
 	s = (char *)luaL_checkstring(L, 1);
 
@@ -446,35 +441,38 @@ encode_string(lua_State *L, luaL_Buffer *b, unsigned char *s)
 			luaL_addstring(b, "\\t");
 			break;
 		default:
-		/* Convert UTF-8 to unicode
-		 * 00000000 - 0000007F: 0xxxxxxx
-		 * 00000080 - 000007FF: 110xxxxx 10xxxxxx
-		 * 00000800 - 0000FFFF: 1110xxxx 10xxxxxx 10xxxxxx
-		 * 00010000 - 001FFFFF: 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
-		 */
+			/* Convert UTF-8 to unicode
+			 * 00000000 - 0000007F: 0xxxxxxx
+			 * 00000080 - 000007FF: 110xxxxx 10xxxxxx
+			 * 00000800 - 0000FFFF: 1110xxxx 10xxxxxx 10xxxxxx
+			 * 00010000 - 001FFFFF: 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+			 */
 			if ((*s & 0x80) == 0)
 				luaL_addchar(b, *s);
 			else if (((*s >> 5) & 0x07) == 0x06) {
 				luaL_addstring(b, "\\u");
-				snprintf(hexbuf, sizeof hexbuf, "%04x",
-				    ((*s & 0x1f) << 6) | (*(s + 1) & 0x3f));
+				snprintf(hexbuf,
+				         sizeof hexbuf,
+				         "%04x",
+				         ((*s & 0x1f) << 6) | (*(s + 1) & 0x3f));
 				luaL_addstring(b, hexbuf);
 				s++;
 			} else if (((*s >> 4) & 0x0f) == 0x0e) {
 				luaL_addstring(b, "\\u");
-				snprintf(hexbuf, sizeof hexbuf, "%04x",
-				    ((*s & 0x0f) << 12) |
-				    ((*(s + 1) & 0x3f) << 6) |
-				    (*(s + 2) & 0x3f));
+				snprintf(hexbuf,
+				         sizeof hexbuf,
+				         "%04x",
+				         ((*s & 0x0f) << 12) | ((*(s + 1) & 0x3f) << 6)
+				             | (*(s + 2) & 0x3f));
 				luaL_addstring(b, hexbuf);
 				s += 2;
 			} else if (((*s >> 3) & 0x1f) == 0x1e) {
 				luaL_addstring(b, "\\u");
-				snprintf(hexbuf, sizeof hexbuf, "%04x",
-				    ((*s & 0x07) << 18) |
-				    ((*(s + 1) & 0x3f) << 12) |
-				    ((*(s + 2) & 0x3f) << 6) |
-				    (*(s + 3) & 0x3f));
+				snprintf(hexbuf,
+				         sizeof hexbuf,
+				         "%04x",
+				         ((*s & 0x07) << 18) | ((*(s + 1) & 0x3f) << 12)
+				             | ((*(s + 2) & 0x3f) << 6) | (*(s + 3) & 0x3f));
 				luaL_addstring(b, hexbuf);
 				s += 3;
 			}
@@ -522,7 +520,7 @@ encode(lua_State *L, luaL_Buffer *b)
 		n = 0;
 		e = 1;
 		t = lua_gettop(L);
-		for (m = 1; ; m++) {
+		for (m = 1;; m++) {
 			lua_geti(L, t, m);
 			if (lua_isnil(L, -1)) {
 				lua_pop(L, 1);
@@ -576,8 +574,9 @@ encode(lua_State *L, luaL_Buffer *b)
 		lua_pop(L, 1);
 		break;
 	default:
-		json_error(L, "Lua type %s is incompatible with JSON",
-		    luaL_typename(L, -1));
+		json_error(L,
+		           "Lua type %s is incompatible with JSON",
+		           luaL_typename(L, -1));
 		lua_pop(L, 1);
 	}
 }
@@ -618,8 +617,9 @@ static void
 json_set_info(lua_State *L)
 {
 	lua_pushliteral(L, "_COPYRIGHT");
-	lua_pushliteral(L, "Copyright (C) 2011 - 2016 "
-	    "micro systems marc balmer");
+	lua_pushliteral(L,
+	                "Copyright (C) 2011 - 2016 "
+	                "micro systems marc balmer");
 	lua_settable(L, -3);
 	lua_pushliteral(L, "_DESCRIPTION");
 	lua_pushliteral(L, "JSON encoder/decoder for Lua");
@@ -637,53 +637,45 @@ json_null(lua_State *L)
 }
 
 int
-luaopen_json(lua_State* L)
+luaopen_json(lua_State *L)
 {
-	static const struct luaL_Reg methods[] = {
-		{ "decode",	json_decode },
-		{ "encode",	json_encode },
-		{ "isnull",	json_isnull },
-		{ NULL,		NULL }
-	};
-	static const struct luaL_Reg null_methods[] = {
-		{ "__tostring",	json_null },
-		{ "__call",	json_null },
-		{ NULL,		NULL }
-	};
-
-
-	luaL_newlibtable(L, methods);
-	luaL_setfuncs(L, methods, 0);
-	lua_setglobal(L, "json");
+	static const struct luaL_Reg methods[] = {{"decode", json_decode},
+	                                          {"encode", json_encode},
+	                                          {"isnull", json_isnull},
+	                                          {NULL, NULL}};
+	static const struct luaL_Reg null_methods[] = {{"__tostring", json_null},
+	                                               {"__call", json_null},
+	                                               {NULL, NULL}};
 
 #if LUA_VERSION_NUM >= 502
 	luaL_newlib(L, methods);
 #else
 	luaL_register(L, "json", methods);
 #endif
-//	json_set_info(L);
-//	lua_newtable(L);
-//	/* The null metatable */
-//	if (luaL_newmetatable(L, JSON_NULL_METATABLE)) {
+	json_set_info(L);
+
+	lua_newtable(L);
+	/* The null metatable */
+	if (luaL_newmetatable(L, JSON_NULL_METATABLE)) {
 #if LUA_VERSION_NUM >= 502
 		luaL_setfuncs(L, null_methods, 0);
 #else
 		luaL_register(L, NULL, null_methods);
 #endif
-//		lua_pushliteral(L, "__metatable");
-//		lua_pushliteral(L, "must not access this metatable");
-//		lua_settable(L, -3);
-//
-//	}
-//	lua_setmetatable(L, -2);
-//
-//	if (luaL_newmetatable(L, JSON_GCMEM_METATABLE)) {
-//		lua_pushliteral(L, "__gc");
-//		lua_pushcfunction(L, gcmem_clear);
-//		lua_settable(L, -3);
-//	}
-//	lua_pop(L, 1);
-//
-//	lua_setfield(L, -2, "null");
+		lua_pushliteral(L, "__metatable");
+		lua_pushliteral(L, "must not access this metatable");
+		lua_settable(L, -3);
+	}
+	lua_setmetatable(L, -2);
+
+	if (luaL_newmetatable(L, JSON_GCMEM_METATABLE)) {
+		lua_pushliteral(L, "__gc");
+		lua_pushcfunction(L, gcmem_clear);
+		lua_settable(L, -3);
+	}
+	lua_pop(L, 1);
+
+	lua_setfield(L, -2, "null");
+	
 	return 1;
 }

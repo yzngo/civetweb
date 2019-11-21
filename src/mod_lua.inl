@@ -2185,12 +2185,14 @@ civetweb_open_lua_libs(lua_State *L)
 	{
 		extern int luaopen_json(lua_State * L);
 		luaopen_json(L);
+		lua_setglobal(L, "json");
 	}
 #endif
 #if defined(USE_LUA_PGSQL)
 	{
 		extern int luaopen_pgsql(lua_State * L);
 		luaopen_pgsql(L);
+		lua_setglobal(L, "pgsql");
 	}
 #endif
 }

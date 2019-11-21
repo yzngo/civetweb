@@ -135,6 +135,9 @@
     <ClCompile Include="..\..\src\third_party\luapgsql.c">
       <Filter>Extension</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\third_party\lsqlite3.c">
+      <Filter>Extension</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\third_party\sqlite3.h">
