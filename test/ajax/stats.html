@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
-    <title>Test</title>
+    <meta charset="utf-8">
+    <title>Playfab统计分析</title>
     <script type='text/javascript' language="javascript" src='jquery.js'></script>
+    <script type='text/javascript' language='javascript' src='echarts.min.js'></script>
     <script type='text/javascript' language="javascript">
-    <!--
+    
 
     function mbox() {
       alert('Javascript OK');
@@ -17,12 +19,10 @@
     var pushCount = 0;
     var allErrorCount = 0;
     var autoTest = false;
-    var testType = "cgi";
+    var testType = "lua";
 
     function NextTestType() {
-      if (testType == "cgi") testType = "lp";
-      else if (testType == "lp") testType = "lua";
-      else testType = "cgi";
+      testType = "lua";
     }
 
     function runTest(method, isAsync) {
@@ -93,12 +93,12 @@
       });
 
     }
-
-
-    //-->
     </script>
-
   </head>
+
+
+
+
   <body>
     <p>
       <div id="start">Test not started.</div>
@@ -126,7 +126,7 @@
             <input id="testButton5" type="button" onclick="autoTest=!autoTest; javascript:runAutoTest()" value="automatic test"></input>
           </td>        
           <td>
-            <input id="testButton6" type="button" onclick="NextTestType(); this.value=testType" value='cgi'></input>
+            <input id="testButton6" type="button" onclick="NextTestType(); this.value=testType" value='lua'></input>
           </td>        
         </tr>
         
@@ -164,5 +164,34 @@
       <div id="resTotal">Push [Test] to start.</div>
       <div id="resSAll"></div>
     </p>
+
+    <div id="chats" style="width: 90%;height:600px;"></div>
+    <script type="text/javascript">
+      // based on prepared DOM, initialize echarts instance
+      var myChart = echarts.init(document.getElementById('chats'));
+  
+      // specify chart configuration item and data
+      var option = {
+          title: {
+              text: 'ECharts'
+          },
+          tooltip: {},
+          legend: {
+              data:['Sales']
+          },
+          xAxis: {
+              data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+          },
+          yAxis: {},
+          series: [{
+              name: 'Sales',
+              type: 'bar',
+              data: [5, 20, 36, 10, 10, 20]
+          }]
+      };
+  
+      // use configuration item and data specified to show chart
+      myChart.setOption(option);
+  </script>
   </body>
 </html>

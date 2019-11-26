@@ -1,0 +1,32 @@
+{
+    "series": [
+        {
+            "name": "Amount",
+            "data": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "type": "bar"
+        }
+    ],
+    "legend": {
+        "data": [
+            "Sales"
+        ]
+    },
+    "tooltip": [],
+    "title": {
+        "text": "消耗"
+    },
+    "xAxis": {
+        "data": [
+            "a",
+            "b",
+            "c",
+            "d"
+        ]
+    },
+    "yAxis": []
+}

@@ -4,7 +4,7 @@ method = mg.request_info.request_method
 uri = mg.request_info.uri
 query = mg.request_info.query_string
 datalen = nil -- TODO: "CONTENT_LENGTH" !
-
+ 
 if method then
   resp = resp .. '"method" : "' .. method .. '", ';
 end
